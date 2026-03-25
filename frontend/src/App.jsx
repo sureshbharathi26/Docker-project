@@ -19,14 +19,63 @@ function App() {
     window.location.reload();
   };
 
-  return (
-    <div>
-      <h1>MERN Docker App</h1>
-      <input onChange={e => setName(e.target.value)} />
-      <button onClick={addItem}>Add</button>
+  const styles = {
+    container: {
+      fontFamily: "Arial, sans-serif",
+      textAlign: "center",
+      marginTop: "50px"
+    },
+    heading: {
+      color: "#333"
+    },
+    input: {
+      padding: "8px",
+      marginRight: "10px",
+      borderRadius: "5px",
+      border: "1px solid #ccc"
+    },
+    button: {
+      padding: "8px 16px",
+      backgroundColor: "#007bff",
+      color: "white",
+      border: "none",
+      borderRadius: "5px",
+      cursor: "pointer"
+    },
+    list: {
+      marginTop: "20px",
+      listStyleType: "none",
+      padding: 0
+    },
+    listItem: {
+      padding: "10px",
+      margin: "5px auto",
+      width: "200px",
+      backgroundColor: "#f2f2f2",
+      borderRadius: "5px"
+    }
+  };
 
-      <ul>
-        {items.map(i => <li key={i._id}>{i.name}</li>)}
+  return (
+    <div style={styles.container}>
+      <h1 style={styles.heading}>MERN Docker App</h1>
+
+      <input
+        style={styles.input}
+        onChange={e => setName(e.target.value)}
+        placeholder="Enter item"
+      />
+
+      <button style={styles.button} onClick={addItem}>
+        Add
+      </button>
+
+      <ul style={styles.list}>
+        {items.map(i => (
+          <li style={styles.listItem} key={i._id}>
+            {i.name}
+          </li>
+        ))}
       </ul>
     </div>
   );
