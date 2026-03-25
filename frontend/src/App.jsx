@@ -69,6 +69,7 @@ function App() {
       <button style={styles.button} onClick={addItem}>
         Add
       </button>
+      <h1>Welcome to ZoHo</h1>
 
       <ul style={styles.list}>
         {items.map(i => (
